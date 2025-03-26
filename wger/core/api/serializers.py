@@ -52,6 +52,7 @@ class UserprofileSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserProfile
         fields = [
+            'fitness_goal',
             'username',
             'email',
             'email_verified',
