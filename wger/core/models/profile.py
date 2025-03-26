@@ -59,6 +59,7 @@ def birthdate_validator(birthdate):
 
 
 class UserProfile(models.Model):
+    fitness_goal = models.CharField(max_length=255, blank=True, null=True)
     GENDER_MALE = '1'
     GENDER_FEMALE = '2'
     GENDER = (
