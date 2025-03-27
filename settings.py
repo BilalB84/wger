@@ -12,7 +12,7 @@ env = environ.Env(
 )
 
 # Use 'DEBUG = True' to get more details for server errors
-DEBUG = True
+DEBUG = env("DJANGO_DEBUG")
 
 if os.environ.get('DJANGO_ADMINS'):
     ADMINS = [env.tuple('DJANGO_ADMINS'), ]
@@ -60,7 +60,11 @@ STATIC_ROOT = env.str("DJANGO_STATIC_ROOT", '/home/wger/static')
 # If you change these, adjust nginx alias definitions as well
 MEDIA_URL = env.str('MEDIA_URL', '/media/')
 STATIC_URL = env.str('STATIC_URL', '/static/')
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'wger', 'core', 'static')]
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
 
 LOGIN_REDIRECT_URL = env.str('LOGIN_REDIRECT_URL', '/')
 
