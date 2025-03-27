@@ -33,7 +33,6 @@ requests==2.32.3
 tqdm==4.67.1
 tzdata==2025.1
 gunicorn
-whitenoise
 
 # AWS
 #boto3
