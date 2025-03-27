@@ -12,7 +12,7 @@ env = environ.Env(
 )
 
 # Use 'DEBUG = True' to get more details for server errors
-DEBUG = env("DJANGO_DEBUG")
+DEBUG = True
 
 if os.environ.get('DJANGO_ADMINS'):
     ADMINS = [env.tuple('DJANGO_ADMINS'), ]
