@@ -60,6 +60,7 @@ STATIC_ROOT = env.str("DJANGO_STATIC_ROOT", '/home/wger/static')
 # If you change these, adjust nginx alias definitions as well
 MEDIA_URL = env.str('MEDIA_URL', '/media/')
 STATIC_URL = env.str('STATIC_URL', '/static/')
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 LOGIN_REDIRECT_URL = env.str('LOGIN_REDIRECT_URL', '/')
 
