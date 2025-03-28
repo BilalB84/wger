@@ -19,16 +19,9 @@ if os.environ.get('DJANGO_ADMINS'):
     ADMINS = [env.tuple('DJANGO_ADMINS'), ]
     MANAGERS = ADMINS
 
-if os.environ.get("DJANGO_DB_ENGINE"):
+if os.environ.get("DATABASE_URL"):
     DATABASES = {
-        'default': {
-            'ENGINE': env.str("DJANGO_DB_ENGINE"),
-            'NAME': env.str("DJANGO_DB_DATABASE"),
-            'USER': env.str("DJANGO_DB_USER"),
-            'PASSWORD': env.str("DJANGO_DB_PASSWORD"),
-            'HOST': env.str("DJANGO_DB_HOST"),
-            'PORT': env.int("DJANGO_DB_PORT"),
-        }
+        'default': env.db('DATABASE_URL')
     }
 else:
     DATABASES = {
