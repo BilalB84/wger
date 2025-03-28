@@ -2,6 +2,7 @@
 
 # Third Party
 import environ
+import os
 
 # wger
 from wger.settings_global import *
@@ -55,11 +56,11 @@ SITE_URL = env.str('SITE_URL', 'http://localhost:8000')
 # Path to uploaded files
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 MEDIA_ROOT = env.str("DJANGO_MEDIA_ROOT", '/home/wger/media')
-STATIC_ROOT = env.str("DJANGO_STATIC_ROOT", '/home/wger/static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # If you change these, adjust nginx alias definitions as well
 MEDIA_URL = env.str('MEDIA_URL', '/media/')
-STATIC_URL = env.str('STATIC_URL', '/static/')
+STATIC_URL = 'https://personaltrainerai-static.onrender.com/'
 
 LOGIN_REDIRECT_URL = env.str('LOGIN_REDIRECT_URL', '/')
 
