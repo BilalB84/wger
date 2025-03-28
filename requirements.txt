@@ -33,6 +33,7 @@ requests==2.32.3
 tqdm==4.67.1
 tzdata==2025.1
 gunicorn
+psycopg2-binary>=2.9.9
 
 # AWS
 #boto3
